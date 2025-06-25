@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta content="initial-scale=1.0,width=device-width" name="viewport">
+
+	<title>Green Tea</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/styles_home.css" rel="stylesheet" type="text/css">
+	
+	<script src="js/scripts.js"></script>
+
+	<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+</head>
+
+
+<body>
+
+	<div class="tea-slider-wrapper">
+		<div class="leaves-container"></div>
+
+		<div class="tea-overlay-content">
+			<h1 class="tea-main-title">Do You Really Know Green Tea?</h1>
+			<p class="tea-subtitle">From flat leaves to floral notes, explore the richness of green tea across regions and traditions.</p>
+			<a href="landing.html" class="tea-btn">Explore the Collection</a>
+		</div>
+
+		<div class="tea-slider">
+		  <img src="images/b1.jpg" alt="Tea 1" />
+		  <img src="images/b2.jpg" alt="Tea 2" />
+		  <img src="images/b3.jpg" alt="Tea 3" />
+		  <img src="images/b4.jpg" alt="Tea 4" />
+		  <img src="images/b5.jpg" alt="Tea 5" />
+		  <img src="images/b6.jpg" alt="Tea 6" />
+		  <img src="images/b7.jpg" alt="Tea 7" />
+		  <img src="images/b8.jpg" alt="Tea 8" />
+		  <img src="images/b9.jpg" alt="Tea 9" />
+		  <img src="images/b10.png" alt="Tea 10" />
+		  <img src="images/b11.png" alt="Tea 11" />
+
+		  <img src="images/b1.jpg" alt="Tea 1 Duplicate" />
+		  <img src="images/b2.jpg" alt="Tea 2 Duplicate" />
+		  <img src="images/b3.jpg" alt="Tea 3 Duplicate" />
+		  <img src="images/b4.jpg" alt="Tea 4 Duplicate" />
+		  <img src="images/b5.jpg" alt="Tea 5 Duplicate" />
+		  <img src="images/b6.jpg" alt="Tea 6 Duplicate" />
+		  <img src="images/b7.jpg" alt="Tea 7 Duplicate" />
+		  <img src="images/b8.jpg" alt="Tea 8 Duplicate" />
+		  <img src="images/b9.jpg" alt="Tea 9 Duplicate" />
+		  <img src="images/b10.png" alt="Tea 10 Duplicate" />
+		  <img src="images/b11.png" alt="Tea 11 Duplicate" />
+		</div>
+	  
+		
+	</div>
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const container = document.querySelector('.leaves-container');
+	
+		function createLeaf() {
+		  const leaf = document.createElement('img');
+		  leaf.src = 'images/leaffall.png';
+		  leaf.classList.add('falling-leaf');
+		  leaf.style.left = Math.random() * 100 + 'vw';
+		  leaf.style.animationDuration = (6 + Math.random() * 4) + 's';
+		  leaf.style.opacity = Math.random();
+		  leaf.style.transform = `rotate(${Math.random() * 360}deg)`;
+		  container.appendChild(leaf);
+	
+		  setTimeout(() => leaf.remove(), 10000);
+		}
+	
+		for (let i = 0; i < 15; i++) {
+		  createLeaf();
+		}
+	
+		setInterval(createLeaf, 1500);
+	  });
+	</script>
+	  
+</body>
+</html>

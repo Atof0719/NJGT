@@ -1,0 +1,230 @@
+:root {
+	--color-page-bg: #FEFFF8;
+	--color-page-bg2: #FFFDFB;
+	--color-text: #2c2c2c;
+	--color-text-reversed: #fff;
+	--color-highlight: #274514;
+	--color-q: #4D892D;
+	--color-footer:#FFFFFB;
+	
+
+	.dark-mode {
+		--color-page-bg:#2F3C31;
+		--color-page-bg2: #3A0E09;
+		--color-text: #FFFFFB;
+		--color-text-reversed: #000;
+		--color-highlight:#bbd4aa;
+		--color-q: #bbd4aa;
+		--color-footer:#274514;
+	}
+}
+
+body{
+  background-color: var(--color-page-bg);
+}
+
+.mode-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+
+  &:hover {
+  transform: rotate(10deg);
+  }
+}
+
+.mode-btn img {
+width: 24px;   
+height: 24px;  
+}
+
+.leaves-container {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.falling-leaf {
+  position: absolute;
+  width: 40px;
+  height: auto;
+  animation: leaf-fall linear infinite;
+}
+
+@keyframes leaf-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+
+.tea-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+
+.tea-slider {
+  display: flex;
+  width: max-content;
+  animation: scrollSlider 90s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.tea-slider img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+
+.tea-overlay-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #fff;
+  max-width: 60rem;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(190, 206, 160, 0.4); 
+  border-radius: 1rem;
+}
+
+.tea-main-title {
+  font-size: 2.5rem;
+  font-family: 'Protest Strike', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.tea-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.tea-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #e7f8cc;
+  color: #305600;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+}
+
+.tea-btn:hover {
+  background-color: #d0f0b4;
+}
+
+@keyframes scrollSlider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+ 
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+
+.tea-overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  
+  border-radius: 1rem;
+}
+
+.tea-main-title {
+  font-size: 1.7rem;
+  font-family: 'Protest Strike', sans-serif;
+  margin-bottom: 1rem;
+
+  @media screen and (min-width: 600px) and (max-width: 749px) {
+		font-size: 2.2rem;
+	  }
+	
+
+	@media screen and (min-width: 750px) {
+		font-size: 2.5rem;	
+	}
+}
+
+.tea-subtitle {
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'lora', serif;
+
+  @media screen and (min-width: 600px) and (max-width: 749px) {
+		font-size: 1rem;
+	  }
+	
+
+	@media screen and (min-width: 750px) {
+		font-size: 1.2rem;	
+	}
+}
+
+.tea-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #e7f8cc;
+  color: #305600;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background-color 0.3s ease;
+  font-family: 'lora', serif;
+  font-size: 0.8rem;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+
+  @media screen and (min-width: 600px) and (max-width: 749px) {
+		font-size: 1rem;
+	  }
+	
+
+	@media screen and (min-width: 750px) {
+		font-size: 1.2rem;	
+	}
+}
+
+.tea-btn:hover {
+  background-color: #d0f0b4;
+}
+
+  

@@ -1,0 +1,388 @@
+:root {
+	--color-page-bg: #FEFFF8;
+	--color-page-bg2: #E7F8CC;
+	--color-text: #2c2c2c;
+	--color-text-reversed: #fff;
+	--color-highlight: #274514;
+	--color-q: #5d8c00;
+	--color-footer:#FFFFFB;
+	--color-left:#8dc26f;
+	--color-box:#f8fce9;
+	
+
+	.dark-mode {
+		--color-page-bg:#2F3C31;
+		--color-page-bg2: #2F4F2F;
+		--color-text: #FFFFFB;
+		--color-text-reversed: #000;
+		--color-highlight:#bbd4aa;
+		--color-q: #bbd4aa;
+		--color-footer:#274514;
+		--color-left:#2f4f3f;
+		--color-box:#2b3a25;
+	}
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--color-page-bg);
+    color: var(--color-highlight);
+   
+    background-image: url('../images/bg1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-position: top center;
+}
+
+.site-header {
+	padding: 1rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+  
+.header-top {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+
+
+.home-link {
+	font-weight: bold;
+	text-decoration: none;
+	color: #264d00;
+	font-size: 1rem;
+}
+  
+.nav_landing{
+    font-family: ’Protest Strike’, sans-serif;
+    a{
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #223322;
+        
+    }
+}
+
+
+.mode-btn {
+    background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem;
+	transition: transform 0.3s ease;
+
+	&:hover {
+		transform: rotate(10deg);
+	}
+}
+
+.mode-btn img {
+	width: 24px;   
+	height: 24px;  
+	
+}
+
+.tea-hero {
+	display: flex;
+	flex-direction: row; 
+	align-items: center;
+	justify-content: center;
+	max-width: 60rem;
+	margin: 0 auto;
+	padding-top: 1rem; 
+	padding-bottom: 2rem;
+	text-align: left; 
+	flex-direction: column;
+	text-align: center;
+	
+}
+
+
+.tea-hero-img {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	flex-shrink: 0;
+	margin: 0 auto 0.1rem;
+	display: block;
+  }
+  
+
+
+.tea-detail-content {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+	font-family: 'Open Sans', sans-serif;
+	color: #2e2e2e;
+	line-height: 1.6;
+}
+  
+ 
+  
+ 
+  
+.tea-name {
+	font-family: 'Satisfy', cursive;
+	font-size: 2.4rem;
+	color: var(--color-highlight);
+	
+	margin-bottom: 0.5rem;
+	text-align: center;
+
+
+	@media screen and (min-width: 600px) and (max-width: 749px) {
+		font-size: 3rem;
+	  }
+	
+
+	 @media screen and (min-width: 750px) {
+		font-size: 4rem;	
+	  }
+}
+  
+.tea-tags {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.7rem 1rem;
+	justify-content: center;
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+	max-width: 24rem; 
+	margin-left: auto;
+	margin-right: auto;
+}
+  
+.tag {
+	background-color: var(--color-page-bg2);
+	color: var(--color-highlight);
+	padding: 0.4rem 0.9rem;
+	border-radius: 999px;
+	font-size: 0.85rem;
+	font-weight: 600;
+	text-align: center;
+
+	@media screen and (max-width: 600px) {
+		font-size: 0.75rem;
+		padding: 0.3rem 0.7rem;
+	}
+}
+  
+.origin-section {
+	display: flex;
+	align-items: center; 
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+  
+.origin-text {
+	flex: 1 1 300px;
+}
+  
+.origin-image {
+	width: 180px;
+	max-width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+
+	@media screen and (max-width: 600px) {
+		margin: 0 auto;
+        display: block;
+  }
+}
+  
+  
+.info-block {
+	background-color: var(--color-page-bg2);
+	padding: 2rem 1.5rem;
+	border-radius: 1.5rem;
+    margin-bottom: 3rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	color: var(--color-text);
+
+	h2 {
+		font-size: 1rem;
+		color: var(--color-highlight);
+		font-weight: bold;
+		margin-bottom: 1.5rem;
+		@media screen and (min-width: 600px) and (max-width: 749px) {
+			font-size: 1.1rem;
+		}
+		
+		@media screen and (min-width: 750px) {
+			font-size: 1.25rem;	
+		}
+	}
+
+	h3 {
+		font-size: 0.9rem;
+		margin-top: 1.5rem;
+		color: var(--color-q);
+		border-left: 4px solid #b6dd9c;
+		padding-left: 0.5rem;
+		@media screen and (min-width: 600px) and (max-width: 749px) {
+			font-size: 1rem;
+		}
+		
+		@media screen and (min-width: 750px) {
+			font-size: 1.1rem;	
+		}
+	}
+	
+	p {
+		margin-top: 0.5rem;
+		font-size: 0.8rem;
+		
+
+	   @media screen and (min-width: 600px) and (max-width: 749px) {
+		font-size: 1rem;
+	  }
+	
+
+	 @media screen and (min-width: 750px) {
+		font-size: 1rem;	
+	  }
+	}
+
+	ul {
+		padding-left: 1.2rem;
+		margin-top: 0.5rem;
+		font-size: 0.8rem;
+
+		@media screen and (min-width: 600px) and (max-width: 749px) {
+		 font-size: 1rem;
+	   }
+	 
+ 
+	  @media screen and (min-width: 750px) {
+		 font-size: 1rem;	
+	   }
+	}
+
+	ul li {
+		list-style-type: disc; 
+		margin-bottom: 0.5rem;
+	}
+}
+
+
+.brewing-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	padding-left: 0rem !important;
+	li {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1rem;
+		line-height: 1.6;
+	}
+	
+}
+
+.leaves-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 999;
+  }
+  
+  .falling-leaf {
+	position: absolute;
+	width: 30px;
+	animation-name: fall;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+  }
+  
+  @keyframes fall {
+	0% {
+	  transform: translateY(-10vh) rotate(0deg);
+	}
+	100% {
+	  transform: translateY(100vh) rotate(360deg);
+	}
+  }
+  
+
+  
+.brewing-card {
+	margin-top: 1rem;
+	background-color: var(--color-box);
+	border-radius: 1.5rem;
+	padding: 1rem;
+	box-shadow: 0 8px 12px rgba(173, 218, 139, 0.3);
+	border-left: 7px solid var(--color-left);
+	transition: transform 0.4s ease, box-shadow 0.4s ease;
+	position: relative;
+	overflow: hidden;
+	
+}
+  
+.brewing-card:hover {
+	transform: translateY(4px);
+	box-shadow: 0 16px 24px rgba(173, 218, 139, 0.35);
+}
+  
+  
+  
+.tip-icon {
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-right: 0.75rem;
+	flex-shrink: 0;
+}
+  
+
+
+.site-footer {
+	background-color: var(--color-highlight);
+	color: var(--color-footer);
+	padding: 4rem 4rem;
+    font-family: 'lora', serif;
+	
+	p{
+		font-size: 0.5rem;
+		
+	}
+
+	@media screen and (min-width: 600px) and (max-width: 749px) {
+		p{
+			font-size: 0.7em;
+		}
+		
+	}
+
+	@media screen and (min-width: 750px) {
+		p{
+			font-size: 0.8rem;	
+		}
+
+	}
+}
+
+.footer-header {
+	display: flex;
+	align-items: center;
+	gap: 1rem; 
+}
+
+.leaf-footer-img {
+	display: block;
+	max-width: 2rem;
+	padding-bottom: 0.7rem;
+}
+
+.footer-title{
+	font-size: 1.2rem;
+	margin-bottom: 0.8rem;
+}
