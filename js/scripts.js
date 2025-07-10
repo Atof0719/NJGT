@@ -14,50 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+const toggleBtn = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
 
-document.addEventListener('DOMContentLoaded', function() {
-	var colormodeTrigger = document.querySelector('.js-mode');
-	var themeIcon = document.getElementById('theme-icon'); 
-
-	if (colormodeTrigger && themeIcon) {
-		colormodeTrigger.addEventListener('click', function() {
-			document.body.classList.toggle('dark-mode');
-
-			if (document.body.classList.contains('dark-mode')) {
-				themeIcon.src = 'images/dark.png';
-			} else {
-				themeIcon.src = 'images/light.png';
-			}
-		});
-	}
+toggleBtn.addEventListener('click', () => {
+    navUl.classList.toggle('show');
 });
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.leaves-container');
-  const trigger = document.querySelector('.brewing-card');
-  let interval;
-
-  function createLeaf() {
-	const leaf = document.createElement('img');
-	leaf.src = 'images/leaffall.png';
-	leaf.classList.add('falling-leaf');
-	leaf.style.left = Math.random() * 100 + 'vw';
-	leaf.style.animationDuration = (6 + Math.random() * 4) + 's';
-	leaf.style.opacity = Math.random();
-	leaf.style.transform = `rotate(${Math.random() * 360}deg)`;
-	container.appendChild(leaf);
-	setTimeout(() => leaf.remove(), 10000);
-  }
-
-  trigger.addEventListener('mouseenter', () => {
-	interval = setInterval(createLeaf, 300);
-  });
-
-  trigger.addEventListener('mouseleave', () => {
-	clearInterval(interval);
-  });
-});
-
-

@@ -1,281 +1,111 @@
 /* Your styles here... */
-:root {
-	--color-page-bg: #FEFFF8;
-	--color-page-bg2: #FFFDFB;
-	--color-text: #2c2c2c;
-	--color-text-reversed: #fff;
-	--color-highlight: #274514;
-	--color-q: #4D892D;
-	--color-footer:#FFFFFB;
-	
-
-	.dark-mode {
-		--color-page-bg:#2F3C31;
-		--color-page-bg2: #3A0E09;
-		--color-text: #FFFFFB;
-		--color-text-reversed: #000;
-		--color-highlight:#bbd4aa;
-		--color-q: #bbd4aa;
-		--color-footer:#274514;
-	}
-}
-
-/* Typography */
-:root {
-	/* Perfect Fith */
-	/* --size-080: .444rem;
-	--size-090: .667rem;
-	--size-100: 1rem;		
-	--size-200: 1.5rem;
-	--size-300: 2.25rem;
-	--size-400: 3.375rem;
-	--size-500: 5.063rem;
-	--size-600: 7.594rem;
-	--size-700: 11.391rem;	 */
-
-	/* Perfect Fourth */
-	--size-080: .563rem;
-	--size-090: .75rem;
-	--size-100: 1rem;		
-	--size-200: 1.333rem;
-	--size-300: 1.777rem;
-	--size-400: 2.369rem;
-	--size-500: 3.157rem;
-	--size-600: 4.209rem;
-	--size-700: 5.61rem;	
-
-	/* Minor Third */
-	/* --size-080: .0694rem;
-	--size-090: .0833rem;
-	--size-100: 1rem;		
-	--size-200: 1.2rem;
-	--size-300: 1.44rem;
-	--size-400: 1.728rem;
-	--size-500: 2.074rem;
-	--size-600: 2.488rem;
-	--size-700: 2.986rem;	 */
-
-
-	/* @media screen and (min-width: 400px) {
-		font-size: 1.05rem;
-	}
-	@media screen and (min-width: 600px) {
-		font-size: 1.1rem;
-	}
-	@media screen and (min-width: 800px) {
-		font-size: 1.2rem;
-	}
-	@media screen and (min-width: 1000px) {
-		font-size: 1.25rem;
-	}
-	@media screen and (min-width: 1200px) {
-		font-size: 1.3rem;
-	}
-	@media screen and (min-width: 1400px) {
-		font-size: 1.4rem;
-	} */
-}
-
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--color-page-bg);
-    color: var(--color-highlight);
-    padding: 0;
     margin: 0;
-    background-image: url('../images/bg2.png');
-	max-width: 2000px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-    background-position: top center;
+}
+header {
+    background: #005AAA;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* 左右分散 */
+    align-items: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    @media (max-width: 768px) {
+        font-size: 20px; /* 在小屏幕上减小标题字体大小 */
+    }
 }
 
-.header_landing {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 1rem 2rem;
+/* 导航栏 */
+nav {
+    margin-top: 10px;
 }
-  
-.nav_landing{
-    font-family: ’Protest Strike’, sans-serif;
-    a{
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        color: #223322;
-        
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 汉堡菜单按钮 - 默认隐藏 */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+
+}
+
+/* 手机端样式 */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #005AAA;
+        margin: 0;
+    }
+    nav ul.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+.begin {
+    background-image: url("../images/homepage1.png");
+
+    background-size: cover;     /* 覆盖整个区域 */
+    background-position: center; /* 居中 */
+    height: 300px;              /* 高度你可以自己改 */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 20px; /* 给左下角留一点内边距 */
+    text-align: left;
+ 
+    color: white;               /* 文字颜色 */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6); /* 提升可读性 */
+
+    h2 {
+        font-size: 3rem;
+        margin: 0;
+        font-family: 'Noto Serif SC', serif;
+        @media (max-width: 768px) {
+            font-size: 2rem; /* 在小屏幕上减小字体大小 */
+        }
     }
 }
 
 
-.mode-btn {
-    background: none;
-	border: none;
-	cursor: pointer;
-	padding: 0.5rem;
-	transition: transform 0.3s ease;
+footer {
+    background-color: #005AAA;
+    color: white;
+    text-align: right;
+    padding: 20px;
+    p {
+        margin: 8px 0;
+        font-size: 10px;
+    }
 
-	&:hover {
-		transform: rotate(10deg);
-	}
-}
-
-.mode-btn img {
-	width: 24px;   
-	height: 24px;  
-	
-}
-  
-.main-title {
-    font-family: 'Satisfy', cursive;
-    text-align: center;
-    font-size:2.5rem;
-    margin-top: 5rem;
-	margin-bottom: 3rem;
-    color: var(--color-highlight);
-   
-    
-	@media screen and (min-width: 600px) and (max-width: 749px) {
-		font-size: 3rem;
-	}
-	
-
-	@media screen and (min-width: 750px) {
-		font-size: 4rem;	
-	}
-}
-
-.sub-title{
-	font-family: 'lora', serif;
-	text-align: center;
-    font-size: 1rem;
-	margin-bottom: 3rem;
-
-	@media screen and (min-width: 600px) and (max-width: 749px) {
-		font-size: 1.5rem;
-	}
-	
-
-	@media screen and (min-width: 750px) {
-		font-size: 2rem;	
-	}
-}
-
-.tea-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto 4rem;
-    padding: 1rem;
-    justify-items: center;
-    align-items: center;
+    p:first-child {
+        font-weight: bold;
+        font-size: 12px;
+    }
     
 }
 
-.tea-hero{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-bottom: 2rem;
-}
-  
-.tea-item {
-	text-align: center;
-	padding: 1rem;
-	border-radius: 12px;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-  
-.tea-img-wrapper {
-	position: relative;
-	width: 100%;
-	max-width: 200px;
-	margin: 0 auto;
-}
-  
-.tea-img {
-	width: 100%;
-	height: auto;
-	transition: opacity 0.3s ease;
-	display: block;
-	border-radius: 8px;
-}
-  
-.hover-img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	pointer-events: none;
-}
-  
-.tea-item:hover .hover-img {
-	opacity: 1;
-  }
-  
-.tea-item:hover .default-img {
-	opacity: 0;
-}
-  
 
-  
-.tea-label {
-    margin-top: 0.5rem;
-    font-weight: bold;
-    color: var(--color-highlight);
-    text-decoration: none;
-    font-family: 'Lora', serif;
-    font-size: 0.8rem;
-
-    @media screen and (min-width: 600px) and (max-width: 749px) {
-		font-size: 0.9rem;
-	}
-	
-
-	@media screen and (min-width: 750px) {
-		font-size: 1rem;	
-	}
-}
-
-.tea-link {
-    text-decoration: none;
-    color: inherit;
-}
-  
-.tea-link .tea-label {
-    text-decoration: none;
-}
-  
-.leaf-footer-img {
-	display: block;
-	max-width: 2rem;
-	padding-bottom: 0.7rem;
-}
-  
-.site-footer {
-	background-color: var(--color-highlight);
-	color: var(--color-footer);
-	padding: 4rem 4rem;
-    font-size: 0.5rem;
-    font-family: 'lora', serif;
-
-	@media screen and (min-width: 600px) and (max-width: 749px) {
-		font-size: 0.7em;
-	}
-
-	@media screen and (min-width: 750px) {
-		font-size: 0.8rem;	
-	}
-}
-.footer-header {
-	display: flex;
-	align-items: center;
-	gap: 1rem; 
-}
-
-.footer-title{
-	font-size: 1.2rem;
-	margin-bottom: 0.8rem;
-}
