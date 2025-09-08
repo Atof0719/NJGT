@@ -25,13 +25,18 @@ nav {
 }
 nav ul {
     list-style: none;
+    margin: 0;
     padding: 0;
     display: flex;
     gap: 15px;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }
+
 nav a {
     color: #fff;
     text-decoration: none;
+    padding: 10px;
+    display: block;
 }
 
 /* 汉堡菜单按钮 - 默认隐藏 */
@@ -49,21 +54,64 @@ nav a {
 }
 
 /* 手机端样式 */
+/* 手机端样式 */
 @media (max-width: 768px) {
+    header {
+        position: relative; /* 作为定位父级 */
+    }
+
+    nav {
+        position: relative; /* 让ul相对header定位 */
+        margin-top: 0;
+    }
+
     nav ul {
-        display: none;
         flex-direction: column;
         background: #005AAA;
         margin: 0;
+        padding: 0;
+        display: none; /* 默认隐藏 */
+        position: absolute; /* 绝对定位 */
+        top: 100%;   /* 紧贴在 header 下方 */
+        right: 0;    /* 靠右对齐 */
+        width: 200px; /* 可以自己调宽度 */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        border-radius: 0 0 6px 6px;
+        z-index: 1000;
     }
+
     nav ul.show {
         display: flex;
     }
+
+    nav li {
+        margin: 0;
+    }
+
+    nav a {
+        display: block;
+        padding: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        color: #fff;
+        text-align: center;
+    }
+
+    nav a:hover {
+        background: #003E7E;
+    }
+
     .menu-toggle {
         display: block;
-        margin-top: 10px;
+        background: none;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 20px;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin-left: auto; /* 确保按钮靠右 */
     }
 }
+
 
 .begin {
     background-image: url("../images/homepage1.png");
@@ -108,4 +156,50 @@ footer {
     
 }
 
+/* 统一内容容器（如果你已定义 .container 可跳过） */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+}
+
+
+
+/* 响应式 */
+@media (max-width:768px){
+  .cta-pills{ padding:28px 0; }
+  .pill{ font-size:13px; }
+}
+
+
+.hero{background:#005AAA;color:#fff;padding:60px 20px;text-align:center;}
+.hero h1{margin:0 0 10px;font-size:28px}
+.hero p{margin:0 0 20px;opacity:.9}
+.hero__cta .btn{margin:0 6px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none}
+.btn--primary{background:#fff;color:#005AAA;font-weight:700}
+.btn--ghost{border:2px solid #fff;color:#fff}
+
+.features{display:grid;gap:12px;grid-template-columns:repeat(4,1fr);padding:24px 20px;background:#f6f9ff}
+.features .card{background:#fff;border:1px solid #e6eef7;border-radius:12px;padding:16px;font-weight:700}
+.features .card small{display:block;font-weight:400;opacity:.75;margin-top:6px}
+
+.services{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);padding:24px 20px}
+.svc{background:#fff;border:1px solid #e6eef7;border-radius:12px;padding:16px}
+.svc h3{margin:0 0 8px}
+.svc a{color:#005AAA;text-decoration:none}
+
+.badges{display:flex;gap:10px;flex-wrap:wrap;padding:12px 20px;background:#eef6ff}
+.badge{border:1px dashed #86b7ff;border-radius:999px;padding:6px 10px;font-size:12px;color:#005AAA;background:#fff}
+
+.clients{padding:24px 20px;background:#f8fbff}
+.logo-grid{display:grid;gap:12px;grid-template-columns:repeat(6,1fr)}
+.logo{background:#fff;border:1px solid #e6eef7;border-radius:12px;padding:20px;text-align:center;color:#4a6ea9}
+
+.contact{padding:32px 20px;text-align:center;background:#005AAA;color:#fff}
+@media (max-width:900px){
+  .features{grid-template-columns:repeat(2,1fr)}
+  .services{grid-template-columns:1fr}
+  .logo-grid{grid-template-columns:repeat(3,1fr)}
+}
 
