@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>企业文化 | 南京国通制冷技术有限公司</title>
+  <link href="css/reset.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+  <style>
+    /* 本页轻量样式（不改你全站 styles.css） */
+    .page-hero{position:relative;background:#005AAA;color:#fff;padding:64px 20px;text-align:center}
+    .page-hero h1{margin:0 0 6px;font-size:28px;font-family:'Noto Serif SC',serif}
+    .page-hero p{margin:0;opacity:.9}
+    .back-home {text-decoration: none;}
+   
+
+    .container{max-width:1100px;margin:0 auto;padding:24px 20px}
+
+    .section{  padding: 60px 0;          /* 上下间距统一 */
+  border-top: 1px solid #eef2f7;}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .card{background:#fff;
+        border:1px solid #e6eef7;
+        border-radius:14px;
+        padding:18px}
+    .card h3{margin:0 0 8px;color:#0d3c7a}
+    .value{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:20px}
+    .value .title{font-size:20px;font-weight:800;color:#0d66c2}
+    .value .desc{color:#24486c}
+    .pillbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .pill{border:1px dashed #86b7ff;border-radius:999px;padding:6px 10px;color:#005AAA;background:#fff;font-size:12px}
+    .img-cover{border-radius:12px;overflow:hidden;border:1px solid #e6eef7}
+    .img-cover img{width:100%;height:auto;display:block}
+    .quote{background:#f6f9ff;border:1px solid #e6eef7;border-radius:12px;padding:18px}
+    .cta{background:#005AAA;color:#fff;text-align:center;padding:28px 16px;border-radius:12px}
+    .cta a{display:inline-block;margin-top:10px;padding:10px 16px;border-radius:10px;background:#fff;color:#005AAA;text-decoration:none;font-weight:700}
+    @media(max-width:900px){.grid-4{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-home">首页</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mainmenu">☰ 菜单</button>
+    <nav>
+      <ul id="mainmenu">
+        <li><a href="about.html">公司简介</a></li>
+        <li><a href="qualification.html">公司资质</a></li>
+        <li><a href="staff.html">人员资质</a></li>
+        <li><a href="culture.html">企业文化</a></li>
+        <li><a href="projects.html">项目展示</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 顶部横幅（可替换为你喜欢的背景图/工人1.png） -->
+  <section class="page-hero">
+    <div class="container">
+      <div style="font-size:13px;opacity:.8">首页 / 企业文化</div>
+      <h1>企业文化</h1>
+      <p>服务为本 · 务实笃行 · 合作共赢 · 创新发展</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- 核心价值 -->
+    <section class="container section">
+      <h2>核心价值观</h2>
+      <div class="grid-4">
+        <div class="card value">
+          <div class="title">服务</div>
+          <div class="desc">服务为本，用户至上</div>
+          <div class="pillbar">
+            <span class="pill">7×24响应</span><span class="pill">标准化维保</span>
+          </div>
+        </div>
+        <div class="card value">
+          <div class="title">务实</div>
+          <div class="desc">务实笃行，精益求精</div>
+          <div class="pillbar">
+            <span class="pill">质量第一</span><span class="pill">安全交付</span>
+          </div>
+        </div>
+        <div class="card value">
+          <div class="title">共赢</div>
+          <div class="desc">诚信为金，合作共赢</div>
+          <div class="pillbar">
+            <span class="pill">长期主义</span><span class="pill">伙伴成长</span>
+          </div>
+        </div>
+        <div class="card value">
+          <div class="title">发展</div>
+          <div class="desc">技术革新，行业先锋</div>
+          <div class="pillbar">
+            <span class="pill">产学研合作</span><span class="pill">持续学习</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 我们的承诺（左图右文，可放你第一张“服务/务实/共赢/发展”的图） -->
+    <section class="container section grid-2">
+      <figure class="img-cover">
+        <!-- 替换为你的图片路径：如 images/culture-values.png 或 你发的第一张图 -->
+        <img src="images/culture1.png" alt="企业文化-价值主张">
+      </figure>
+      <div class="card">
+        <h3>我们的承诺</h3>
+        <p class="quote">
+          以客户需求为导向，提供中央空调与通风系统从设计、安装、维保到改造的全生命周期服务；
+          以严格的质量与安全标准，确保系统稳定、高效、节能；以诚信为基石，携手客户与伙伴共创长期价值。
+        </p>
+        <div class="pillbar" style="margin-top:10px">
+          <span class="pill">响应及时</span>
+          <span class="pill">技术过硬</span>
+          <span class="pill">过程透明</span>
+          <span class="pill">结果导向</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 工作准则 -->
+    <section class="container section grid-4">
+      <div class="card">
+        <h3>以终为始</h3>
+        <p>围绕目标倒推方案与资源配置，确保项目如期高质交付。</p>
+      </div>
+      <div class="card">
+        <h3>标准先行</h3>
+        <p>严格遵循施工与维保标准，过程留痕，数据可追溯。</p>
+      </div>
+      <div class="card">
+        <h3>安全第一</h3>
+        <p>执行 ISO 与现场安全规范，安全教育常态化。</p>
+      </div>
+      <div class="card">
+        <h3>持续改进</h3>
+        <p>复盘与迭代相结合，推动能效、稳定性与体验持续优化。</p>
+      </div>
+    </section>
+
+    <!-- 团队风貌/我们的优势（可放你第二张“公司介绍-我们的优势”的图） -->
+    <section class="container section grid-2">
+      <div class="card">
+        <h3>我们的团队</h3>
+        <p>
+          由资深维修（保养）工程师与安装（改造）工程师组成，具备多行业现场经验与复杂项目实施能力；
+          注重沟通协作与现场管理，保障每一次交付稳定可靠。
+        </p>
+        <ul style="margin:8px 0 0 18px">
+          <li>十余年行业实践与多项资质</li>
+          <li>覆盖维保托管、节能改造、安装调试全链路</li>
+          <li>与高校与行业组织共建培训与标准</li>
+        </ul>
+      </div>
+      <figure class="img-cover">
+        <!-- 替换为你的图片路径：如 images/culture-advantages.png 或 你发的第二张图 -->
+        <img src="images/culture2.png" alt="我们的优势">
+      </figure>
+    </section>
+
+    <!-- 联系 CTA -->
+    <section class="container section">
+      <div class="cta">
+        <h3>一起把每一个系统做到更稳定、更节能</h3>
+        <p>电话：025-83611815　微信：Njguotong</p>
+        <a href="mailto:info@example.com">邮件咨询</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 南京国通制冷技术有限公司.</p>
+    <p>电话：025-83611815</p>
+    <p>微信：Njguotong</p>
+    <p>地址：江苏省南京市鼓楼区中山北路188号长发</p>
+  </footer>
+
+  <script>
+    // 与其它页面一致的菜单逻辑
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn  = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('nav ul');
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = menu.classList.toggle('show');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('header')) {
+          menu.classList.remove('show');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

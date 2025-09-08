@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>公司简介 | 南京国通制冷技术有限公司</title>
+  <link href="css/reset.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+  <style>
+    /* 仅本页的轻量增强样式（不影响你全站的 styles.css） */
+    .page-hero{background:#005AAA;color:#fff;padding:56px 20px;text-align:center}
+    .back-home {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: auto; /* 保证靠最左 */
+}
+.container {
+  max-width: 1100px;   /* 页面内容最大宽度 */
+  margin: 0 auto;      /* 居中 */
+  padding: 0 20px;     /* 左右留白 */
+}
+.page-hero {
+  background-image: url("../images/工人1.png"); /* 工人1.png 路径 */
+  background-size: cover;       /* 图片覆盖整个区域 */
+  background-position: center;  /* 居中显示 */
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* 增强文字可读性 */
+}
+
+
+
+    .page-hero h1{margin:0 0 8px;font-size:28px;font-family:'Noto Serif SC',serif}
+    .page-hero p{margin:0;opacity:.9}
+    .container{max-width:1100px;margin:0 auto;padding:24px 20px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .card{background:#fff;border:1px solid #e6eef7;border-radius:12px;padding:18px}
+    .card h3{margin:0 0 10px;font-size:18px;color:#0d3c7a}
+    .muted{opacity:.85}
+    .list{margin:0;padding-left:18px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .badge{border:1px dashed #86b7ff;border-radius:999px;padding:6px 10px;font-size:12px;color:#005AAA;background:#fff}
+    .section{padding:14px 0 6px;border-top:1px solid #eef2f7}
+    .timeline{border-left:3px solid #e6eef7;margin:8px 0 0 6px;padding-left:16px}
+    .timeline li{margin:10px 0}
+    .cta{background:#005AAA;color:#fff;text-align:center;padding:28px 16px;border-radius:12px}
+    .cta a{display:inline-block;margin-top:10px;padding:10px 16px;border-radius:10px;background:#fff;color:#005AAA;text-decoration:none;font-weight:700}
+    .crumbs{font-size:13px;opacity:.7;margin:10px 0 0}
+    .crumbs a{color:#fff;text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.6)}
+    @media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="back-home">首页</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mainmenu">☰ 菜单</button>
+    <nav>
+      <ul id="mainmenu">
+        <li><a href="about.html">公司简介</a></li>
+        <li><a href="qualification.html">公司资质</a></li>
+        <li><a href="staff.html">人员资质</a></li>
+        <li><a href="culture.html">企业文化</a></li>
+        <li><a href="projects.html">项目展示</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 顶部横幅 -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="crumbs"><a href="index.html">首页</a> / 公司简介</div>
+      <h1>公司简介</h1>
+      <p>暖通中央空调与通风系统的一站式技术服务商</p>
+    </div>
+  </section>
+
+  <main>
+     <div class="container">
+    <section class="container section">
+      <h2>公司概览</h2>
+      <p class="muted">
+        南京国通制冷技术有限公司自 2006 年创立以来，始终深耕于暖通中央空调及通风系统领域，专注提供行业专业技术服务。
+        国通制冷是国家级高新技术企业与国家级科技型企业，同时也是江苏海事职业学院“产学研”校企合作的重要伙伴，积极推动行业人才培养与技术进步。
+      </p>
+    </section>
+
+    <section class="container section grid-2">
+      <div class="card">
+        <h3>资质与认证</h3>
+        <ul class="list">
+          <li>国家高新技术企业、国家级科技型企业</li>
+          <li>建筑机电安装叁级</li>
+          <li>中国制冷空调设备维修安装 A 类 I 级、D 类 I 级</li>
+          <li>通过 ISO 质量、环境、职业健康管理体系认证</li>
+        </ul>
+        <div class="badges">
+          <span class="badge">高新技术企业</span>
+          <span class="badge">机电安装叁级</span>
+          <span class="badge">A 类 I 级</span>
+          <span class="badge">D 类 I 级</span>
+          <span class="badge">ISO 9001/14001/45001</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>业务范围</h3>
+        <p class="muted">提供覆盖全生命周期的服务：</p>
+        <ul class="list">
+          <li>中央空调系统及相关设备的销售、安装与调试</li>
+          <li>维修与保养、维保托管</li>
+          <li>系统改造与能效优化</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container section grid-2">
+      <div class="card">
+        <h3>行业贡献</h3>
+        <ul class="list">
+          <li>参编《建筑机电（空调）维修安装维保手册》行业规范指导书籍</li>
+          <li>参与相关行业国家标准编制</li>
+          <li>拥有多项发明及实用新型专利</li>
+          <li>与江苏海事职业学院开展“产学研”合作</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>团队与服务理念</h3>
+        <p class="muted">
+          公司培养了一批专业资深的维修（保养）工程师和优质负责的安装（改造）工程师团队。
+          始终秉持 “一切从客户出发” 的服务理念，以标准化流程与精湛技术，为客户提供可靠、高效的解决方案。
+        </p>
+      </div>
+    </section>
+
+    <section class="container section grid-2">
+      <div class="card">
+        <h3>服务对象</h3>
+        <ul class="list">
+          <li>政府机关 / 高等院校 / 医院医疗（医药）</li>
+          <li>合资外资工厂 / 企事业单位</li>
+          <li>个人用户</li>
+        </ul>
+      </div>
+     
+    </section>
+
+    <section class="container section">
+      <div class="card">
+        <h3>发展时间线</h3>
+        <ul class="timeline">
+          <li><strong>2006</strong> — 公司成立，专注暖通中央空调与通风系统服务</li>
+          <li><strong>—</strong> — 建立维保与安装标准流程，拓展政府与高校客户</li>
+          <li><strong>—</strong> — 通过 ISO 三体系认证，取得 A 类 I 级 / D 类 I 级资质</li>
+          <li><strong>—</strong> — 获评国家高新技术企业、国家级科技型企业</li>
+          <li><strong>—</strong> — 参编行业手册与国标、开展产学研合作、获得多项专利</li>
+          <li><strong>至今</strong> — 为多行业客户提供全生命周期服务</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="cta">
+        <h3>需要技术方案或维保支持？</h3>
+        <p>我们将根据您的场景提供专业建议与实施计划。</p>
+        <a href="mailto:info@example.com">邮件咨询</a>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 南京国通制冷技术有限公司.</p>
+    <p>电话：025-83611815</p>
+    <p>微信：Njguotong</p>
+    <p>地址：江苏省南京市鼓楼区中山北路188号长发</p>
+  </footer>
+
+  <script>
+    // 菜单：点击汉堡键展开/收起（与你首页一致）
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn  = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('nav ul');
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = menu.classList.toggle('show');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('header')) {
+          menu.classList.remove('show');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
