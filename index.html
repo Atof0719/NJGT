@@ -1,104 +1,740 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>南京国通制冷技术有限公司</title>
-    <link href="css/reset.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>南京国通制冷技术有限公司</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --navy:    #0a1628;
+      --deep:    #0e2040;
+      --ice:     #c8dff0;
+      --frost:   #e8f3fb;
+      --silver:  #8fa8bc;
+      --gold:    #b8966e;
+      --white:   #f5f8fb;
+      --pad:     clamp(2rem, 8vw, 9rem);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--navy);
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.8rem var(--pad);
+      transition: background .4s, padding .4s;
+    }
+    nav.scrolled {
+      background: rgba(10,22,40,.88);
+      backdrop-filter: blur(12px);
+      padding-top: 1.1rem; padding-bottom: 1.1rem;
+    }
+    .logo {
+      color: #fff;
+      font-family: 'Noto Serif SC', serif;
+      font-size: clamp(.85rem, 1.2vw, 1rem);
+      font-weight: 300;
+      letter-spacing: .18em;
+      line-height: 1.5;
+    }
+    .logo span { display: block; font-size: .65em; letter-spacing: .35em; opacity: .65; }
+    nav ul { list-style: none; display: flex; gap: clamp(1.5rem, 3vw, 3.5rem); }
+    nav ul a {
+      color: rgba(255,255,255,.75);
+      text-decoration: none;
+      font-size: .78rem;
+      letter-spacing: .2em;
+      transition: color .25s;
+    }
+    nav ul a:hover { color: var(--ice); }
+
+    /* ─── HERO ────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100svh; min-height: 640px;
+      display: flex; align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(160deg,
+          rgba(10,22,40,.82) 0%,
+          rgba(14,32,64,.55) 45%,
+          rgba(10,22,40,.78) 100%),
+        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      transform: scale(1.04);
+      animation: bgDrift 18s ease-in-out infinite alternate;
+    }
+    @keyframes bgDrift {
+      from { transform: scale(1.04) translateX(0); }
+      to   { transform: scale(1.08) translateX(-1.5%); }
+    }
+
+    /* Decorative grid overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(200,223,240,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,223,240,.04) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    .hero-content {
+      position: relative;
+      padding: 0 var(--pad) clamp(4rem, 10vh, 8rem);
+      max-width: 1400px; width: 100%;
+      margin: 0 auto;
+      animation: fadeUp .9s .2s both ease-out;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .9rem;
+      color: var(--ice); font-size: .72rem; letter-spacing: .35em;
+      margin-bottom: 2rem; opacity: .85;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block; width: 2.5rem; height: 1px;
+      background: var(--ice); opacity: .6;
+    }
+
+    h1 {
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 5.5vw, 5rem);
+      color: #fff;
+      line-height: 1.22;
+      letter-spacing: .05em;
+      max-width: 16em;
+      margin-bottom: 1.8rem;
+    }
+    h1 em {
+      font-style: normal;
+      color: var(--ice);
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,.58);
+      font-size: clamp(.82rem, 1.1vw, .95rem);
+      letter-spacing: .22em;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-ctas {
+      display: flex; gap: 1.2rem; flex-wrap: wrap;
+    }
+    .btn-primary {
+      padding: .85rem 2.5rem;
+      background: var(--gold);
+      color: #fff;
+      border: none; border-radius: 2px;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: .8rem; letter-spacing: .18em;
+      cursor: pointer; text-decoration: none;
+      transition: background .25s, transform .2s;
+    }
+    .btn-primary:hover { background: #c9a87e; transform: translateY(-2px); }
+    .btn-ghost {
+      padding: .85rem 2.5rem;
+      background: transparent;
+      color: rgba(255,255,255,.8);
+      border: 1px solid rgba(200,223,240,.35);
+      border-radius: 2px;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: .8rem; letter-spacing: .18em;
+      cursor: pointer; text-decoration: none;
+      transition: border-color .25s, color .25s, transform .2s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--ice); color: var(--ice);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll hint */
+    .scroll-hint {
+      position: absolute; bottom: 2.5rem; right: var(--pad);
+      display: flex; flex-direction: column; align-items: center; gap: .6rem;
+      color: rgba(255,255,255,.35); font-size: .65rem; letter-spacing: .28em;
+      animation: fadeUp 1s .8s both;
+    }
+    .scroll-hint::after {
+      content: '';
+      display: block; width: 1px; height: 3.5rem;
+      background: linear-gradient(to bottom, rgba(200,223,240,.5), transparent);
+      animation: lineGrow 1.5s 1s both;
+    }
+    @keyframes lineGrow {
+      from { transform: scaleY(0); transform-origin: top; }
+      to   { transform: scaleY(1); }
+    }
+
+    /* ─── STATS BAR ───────────────────────── */
+    .stats-bar {
+      background: var(--navy);
+      padding: 3rem var(--pad);
+    }
+    .stats-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem 3rem;
+    }
+    .stat {
+      border-left: 1px solid rgba(200,223,240,.18);
+      padding-left: 1.5rem;
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--ice);
+      letter-spacing: .04em;
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+    .stat-num sup { font-size: .45em; vertical-align: super; opacity: .7; }
+    .stat-label {
+      font-size: .72rem; letter-spacing: .18em;
+      color: rgba(200,223,240,.45);
+    }
+
+    /* ─── INTRO ───────────────────────────── */
+    .intro {
+      padding: clamp(5rem, 10vh, 10rem) var(--pad);
+      max-width: 1400px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem 8rem;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .intro { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    .intro-label {
+      font-size: .7rem; letter-spacing: .35em;
+      color: var(--gold); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .intro-label::before {
+      content: ''; display: block;
+      width: 2rem; height: 1px; background: var(--gold);
+    }
+    .intro h2 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--navy);
+      letter-spacing: .04em;
+      margin-bottom: 2rem;
+    }
+    .intro-body {
+      font-size: .88rem; line-height: 2;
+      color: #4a5a6e;
+      margin-bottom: 2.5rem;
+    }
+    .intro-right {
+      position: relative;
+    }
+    .intro-img-wrap {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .intro-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .intro-img-wrap:hover img { transform: scale(1.03); }
+    .intro-badge {
+      position: absolute; bottom: -1.5rem; left: -1.5rem;
+      background: var(--navy);
+      color: var(--ice);
+      padding: 1.5rem 2rem;
+      font-family: 'Noto Serif SC', serif;
+      font-size: .82rem; letter-spacing: .12em; line-height: 1.8;
+    }
+    .intro-badge strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 300;
+      color: var(--gold); line-height: 1;
+      margin-bottom: .3rem;
+    }
+
+    /* ─── SERVICES ────────────────────────── */
+    .services {
+      background: var(--deep);
+      padding: clamp(5rem, 10vh, 9rem) var(--pad);
+    }
+    .section-header {
+      max-width: 1400px; margin: 0 auto 4rem;
+      display: flex; align-items: flex-end; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .section-label {
+      font-size: .7rem; letter-spacing: .35em;
+      color: var(--silver); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .section-label::before {
+      content: ''; display: block;
+      width: 2rem; height: 1px; background: var(--silver);
+    }
+    .services .section-header h2 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 300; color: #fff;
+      letter-spacing: .06em;
+    }
+    .services-grid {
+      max-width: 1400px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5px;
+      background: rgba(200,223,240,.08);
+    }
+    .service-card {
+      background: var(--deep);
+      padding: 3rem 2.5rem;
+      border: 1px solid rgba(200,223,240,.07);
+      transition: background .3s;
+      cursor: default;
+    }
+    .service-card:hover { background: rgba(14,32,64,.4) }
+    .service-icon {
+      width: 2.5rem; height: 2.5rem; margin-bottom: 2rem;
+      opacity: .55;
+    }
+    .service-card h3 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.05rem; font-weight: 400;
+      color: var(--ice); letter-spacing: .06em;
+      margin-bottom: 1rem;
+    }
+    .service-card p {
+      font-size: .82rem; line-height: 1.9;
+      color: rgba(200,223,240,.45);
+    }
+    .service-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      margin-top: 2rem;
+      color: var(--gold); font-size: .72rem;
+      letter-spacing: .2em; text-decoration: none;
+      transition: gap .25s;
+    }
+    .service-link:hover { gap: .8rem; }
+    .service-link::after { content: '→'; }
+
+    /* ─── QUALIFICATIONS ──────────────────── */
+    .quals {
+      padding: clamp(5rem, 10vh, 9rem) var(--pad);
+      max-width: 1400px; margin: 0 auto;
+    }
+    .quals-grid {
+      margin-top: 4rem;
+      display: flex; flex-wrap: wrap; gap: 1px;
+      background: rgba(10,22,40,.1);
+    }
+    .qual-item {
+      flex: 1; min-width: 140px;
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border: 1px solid rgba(10,22,40,.06);
+      transition: background .3s;
+    }
+    .qual-item:hover { background: var(--frost); }
+    .qual-item h4 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: .88rem; font-weight: 400;
+      color: var(--navy); letter-spacing: .08em;
+      margin-bottom: .5rem;
+    }
+    .qual-item p {
+      font-size: .7rem; letter-spacing: .1em;
+      color: var(--silver);
+    }
+    .qual-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; color: var(--gold);
+      margin-bottom: .8rem; line-height: 1;
+    }
+
+    /* ─── CLIENTS ─────────────────────────── */
+    .clients {
+      background: var(--frost);
+      padding: clamp(4rem, 8vh, 7rem) var(--pad);
+    }
+    .clients-inner {
+      max-width: 1400px; margin: 0 auto;
+    }
+    .clients-row {
+      margin-top: 3rem;
+      display: flex; flex-wrap: wrap; gap: 1rem;
+    }
+    .client-tag {
+      padding: .7rem 1.8rem;
+      border: 1px solid rgba(10,22,40,.15);
+      border-radius: 100px;
+      font-size: .78rem; letter-spacing: .18em;
+      color: var(--navy); opacity: .65;
+      transition: opacity .25s, border-color .25s;
+    }
+    .client-tag:hover { opacity: 1; border-color: var(--gold); }
+
+    /* ─── CONTACT ─────────────────────────── */
+    .contact {
+      background: var(--navy);
+      padding: clamp(5rem, 10vh, 9rem) var(--pad);
+    }
+    .contact-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    .contact h2 {
+      font-family: 'Noto Serif SC', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300; color: #fff;
+      letter-spacing: .06em; line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+    .contact-sub {
+      color: rgba(200,223,240,.45);
+      font-size: .85rem; line-height: 1.9;
+      letter-spacing: .06em;
+    }
+    .contact-info {
+      display: flex; flex-direction: column; gap: 2rem;
+    }
+    .contact-item {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+    }
+    .contact-item-icon {
+      width: 1.8rem; height: 1.8rem; opacity: .4; flex-shrink: 0;
+      margin-top: .15rem;
+    }
+    .contact-item-text h5 {
+      font-size: .7rem; letter-spacing: .28em;
+      color: var(--silver); margin-bottom: .4rem;
+    }
+    .contact-item-text p {
+      color: rgba(255,255,255,.8);
+      font-size: .9rem; letter-spacing: .06em;
+    }
+
+    /* ─── FOOTER ──────────────────────────── */
+    footer {
+      background: #060f1c;
+      padding: 2rem var(--pad);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    footer p {
+      font-size: .68rem; letter-spacing: .15em;
+      color: rgba(200,223,240,.25);
+    }
+
+    /* ─── SCROLL REVEAL ───────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* ─── MOBILE NAV ──────────────────────── */
+    @media (max-width: 700px) {
+      nav ul { display: none; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1></h1>
-		<button class="menu-toggle">☰ 菜单</button>
-        <nav>
-            <ul>
-				<li><a href="about.html" >公司简介</a></li>
-				<li><a href="qualification.html" >公司资质</a></li>
-				<li><a href="staff.html">人员资质</a></li>
-                <li><a href="culture.html">企业文化</a></li>
-                <li><a href="projects.html">项目展示</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="begin">
-            <h2>南京国通制冷技术有限公司</h2>
-           
-        </section>
+<!-- NAV -->
+<nav id="nav">
+  <div class="logo">
+    南京国通制冷技术有限公司
+    <span>NANJING GUOTONG REFRIGERATION</span>
+  </div>
+  <ul>
+    <li><a href="#intro">公司简介</a></li>
+    <li><a href="#services">业务范围</a></li>
+    <li><a href="#quals">资质认证</a></li>
+    <li><a href="#contact">联系我们</a></li>
+  </ul>
+</nav>
 
-    </main>
-
-       <!-- Hero -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero__inner">
-    <h1>暖通中央空调与通风系统的全生命周期服务伙伴</h1>
-    <p>销售 · 安装 · 维修 · 保养 · 改造</p>
-    <div class="hero__cta">
-      <a class="btn btn--primary" href="about.html">了解我们</a>
-      <a class="btn btn--ghost" href="#contact">获取方案</a>
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">暖通 · 制冷 · 节能</p>
+    <h1>暖通中央空调与通风<br>系统的<em>全生命周期</em><br>服务伙伴</h1>
+    <p class="hero-sub">销售 &middot; 安装 &middot; 维修 &middot; 保养 &middot; 改造</p>
+    <div class="hero-ctas">
+      <a href="#services" class="btn-primary">了解我们的服务</a>
+      <a href="#contact" class="btn-ghost">获取方案</a>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat reveal">
+      <div class="stat-num">20<sup>+</sup></div>
+      <div class="stat-label">年行业经验</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">500<sup>+</sup></div>
+      <div class="stat-label">服务项目</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">5</div>
+      <div class="stat-label">国家级认证资质</div>
+    </div>
+    <div class="stat reveal">
+      <div class="stat-num">ISO</div>
+      <div class="stat-label">三体系认证</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+  <div class="intro-left">
+    <p class="intro-label reveal">关于我们</p>
+    <h2 class="reveal">专注暖通制冷<br>深耕行业二十余年</h2>
+    <p class="intro-body reveal">
+      南京国通制冷技术有限公司深耕暖通制冷领域，专注为政府机关、高校、医疗机构、工厂及企事业单位提供中央空调与通风系统的一体化解决方案。
+    </p>
+    <p class="intro-body reveal">
+      公司持有高新技术企业认定、机电安装叁级资质及ISO 9001 / 14001 / 45001 三体系认证，并积极参与行业手册编写与国家标准制定，以产学研合作推动行业进步。
+    </p>
+    <a href="#contact" class="btn-primary reveal" style="display:inline-block;margin-top:.5rem;">与我们合作</a>
+  </div>
+  <div class="intro-right reveal">
+    <div class="intro-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80"
+        alt="暖通工程现场"
+        loading="lazy"
+      />
+    </div>
+    <div class="intro-badge">
+      <strong>高新</strong>
+      技术企业认定
     </div>
   </div>
 </section>
 
-<!-- 4 值得信赖 -->
-<section class="features">
-  <div class="card">资质与认证<br><small>高新技术企业·机电安装叁级·A/D类I级·ISO三体系</small></div>
-  <div class="card">业务范围<br><small>销售/安装/维保/改造一体化</small></div>
-  <div class="card">行业贡献<br><small>参编手册与国标·产学研合作</small></div>
-  <div class="card">服务对象<br><small>政府/高校/医疗/工厂/企事业/个人</small></div>
-</section>
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div>
+      <p class="section-label">我们的服务</p>
+      <h2>一体化暖通解决方案</h2>
+    </div>
+  </div>
+  <div class="services-grid">
 
-<!-- 服务卡片 -->
-<section class="services">
-  <article class="svc">
-    <h3>中央空调维保</h3>
-    <p>建立台账与保养计划，降低故障率与能耗。</p>
-    <a href="services.html#maint">了解更多 →</a>
-  </article>
-  <article class="svc">
-    <h3>系统改造升级</h3>
-    <p>旧系统评估与节能改造，兼顾可靠与成本。</p>
-    <a href="services.html#retrofit">了解更多 →</a>
-  </article>
-  <article class="svc">
-    <h3>安装与调试</h3>
-    <p>标准化施工与验收，交付即稳定运行。</p>
-    <a href="services.html#install">了解更多 →</a>
-  </article>
-</section>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--ice)" stroke-width="1.2">
+        <circle cx="20" cy="20" r="14"/>
+        <path d="M20 10v10l6 4"/>
+        <path d="M10 20h4M26 20h4M20 10V6M20 30v4"/>
+      </svg>
+      <h3>中央空调维保</h3>
+      <p>建立设备台账与定期保养计划，科学管控运行参数，有效降低故障率与能源消耗，延长设备使用寿命。</p>
+      <a href="#contact" class="service-link">咨询方案</a>
+    </div>
 
-<!-- 资质徽章（示意） -->
-<section class="badges">
-  <span class="badge">高新技术企业</span>
-  <span class="badge">机电安装叁级</span>
-  <span class="badge">A类I级</span>
-  <span class="badge">D类I级</span>
-  <span class="badge">ISO 9001/14001/45001</span>
-</section>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--ice)" stroke-width="1.2">
+        <rect x="6" y="14" width="28" height="18" rx="1"/>
+        <path d="M12 14V10a8 8 0 0 1 16 0v4"/>
+        <circle cx="20" cy="23" r="3"/>
+        <path d="M20 26v3"/>
+      </svg>
+      <h3>系统改造升级</h3>
+      <p>对老旧系统进行综合评估，制定节能改造方案，在保障系统可靠性的同时显著降低运营成本。</p>
+      <a href="#contact" class="service-link">咨询方案</a>
+    </div>
 
-<!-- 客户 Logo / 案例占位 -->
-<section class="clients">
-  <h3>服务客户</h3>
-  <div class="logo-grid">
-    <div class="logo">政府</div><div class="logo">高校</div><div class="logo">医疗</div>
-    <div class="logo">工厂</div><div class="logo">企事业</div><div class="logo">个人</div>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--ice)" stroke-width="1.2">
+        <path d="M8 32L32 8"/>
+        <path d="M8 8h10v10M22 22h10v10"/>
+        <circle cx="20" cy="20" r="4"/>
+      </svg>
+      <h3>安装与调试</h3>
+      <p>严格遵循国家标准进行施工组织与验收，全流程质量管控，确保系统交付即稳定高效运行。</p>
+      <a href="#contact" class="service-link">咨询方案</a>
+    </div>
+
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="var(--ice)" stroke-width="1.2">
+        <path d="M20 6l3 8h9l-7 5 3 8-8-6-8 6 3-8-7-5h9z"/>
+      </svg>
+      <h3>设备销售</h3>
+      <p>甄选优质品牌，提供从方案选型到采购交付的全链路支持，确保设备适配、性价比优化。</p>
+      <a href="#contact" class="service-link">咨询方案</a>
+    </div>
+
   </div>
 </section>
 
+<!-- QUALIFICATIONS -->
+<section class="quals" id="quals">
+  <div class="section-label reveal">资质与认证</div>
+  <h2 class="reveal" style="font-family:'Noto Serif SC',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:300;letter-spacing:.06em;color:var(--navy);margin-top:1rem;margin-bottom:.5rem;">专业实力，权威背书</h2>
+  <div class="quals-grid">
+    <div class="qual-item reveal">
+      <div class="qual-num">高新</div>
+      <h4>高新技术企业</h4>
+      <p>国家级认定</p>
+    </div>
+    <div class="qual-item reveal">
+      <div class="qual-num">叁级</div>
+      <h4>机电安装资质</h4>
+      <p>承接大型工程</p>
+    </div>
+    <div class="qual-item reveal">
+      <div class="qual-num">A/I</div>
+      <h4>A类 I 级资质</h4>
+      <p>制冷系统专项</p>
+    </div>
+    <div class="qual-item reveal">
+      <div class="qual-num">D/I</div>
+      <h4>D类 I 级资质</h4>
+      <p>专业认定</p>
+    </div>
+    <div class="qual-item reveal">
+      <div class="qual-num">ISO</div>
+      <h4>ISO 三体系</h4>
+      <p>9001 / 14001 / 45001</p>
+    </div>
+  </div>
+</section>
 
+<!-- CLIENTS -->
+<section class="clients">
+  <div class="clients-inner">
+    <p class="section-label reveal">服务对象</p>
+    <h2 class="reveal" style="font-family:'Noto Serif SC',serif;font-size:clamp(1.4rem,2.2vw,2rem);font-weight:300;letter-spacing:.06em;color:var(--navy);margin-top:1rem;">携手各界，共筑舒适环境</h2>
+    <div class="clients-row">
+      <span class="client-tag reveal">政府机关</span>
+      <span class="client-tag reveal">高等院校</span>
+      <span class="client-tag reveal">医疗机构</span>
+      <span class="client-tag reveal">工业工厂</span>
+      <span class="client-tag reveal">企事业单位</span>
+      <span class="client-tag reveal">商业综合体</span>
+      <span class="client-tag reveal">个人客户</span>
+    </div>
+  </div>
+</section>
 
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <p class="section-label" style="color:var(--silver)">联系我们</p>
+      <h2>准备好开始您的<br>暖通项目了吗？</h2>
+      <p class="contact-sub">我们的专业团队将为您量身制定解决方案，从咨询到交付，全程陪伴。</p>
+    </div>
+    <div class="contact-info">
+      <div class="contact-item reveal">
+        <svg class="contact-item-icon" viewBox="0 0 28 28" fill="none" stroke="var(--ice)" stroke-width="1.3">
+          <path d="M4 6h20v16H4z"/><path d="M4 6l10 9 10-9"/>
+        </svg>
+        <div class="contact-item-text">
+          <h5>电话</h5>
+          <p>025-83611815</p>
+        </div>
+      </div>
+      <div class="contact-item reveal">
+        <svg class="contact-item-icon" viewBox="0 0 28 28" fill="none" stroke="var(--ice)" stroke-width="1.3">
+          <circle cx="14" cy="12" r="5"/><path d="M14 2C8.477 2 4 6.477 4 12c0 7 10 16 10 16s10-9 10-16c0-5.523-4.477-10-10-10z"/>
+        </svg>
+        <div class="contact-item-text">
+          <h5>地址</h5>
+          <p>江苏省南京市鼓楼区<br>中山北路188号长发</p>
+        </div>
+      </div>
+      <div class="contact-item reveal">
+        <svg class="contact-item-icon" viewBox="0 0 28 28" fill="none" stroke="var(--ice)" stroke-width="1.3">
+          <rect x="3" y="5" width="22" height="18" rx="2"/>
+          <path d="M9 5v18M19 5v18M3 12h22M3 18h22"/>
+        </svg>
+        <div class="contact-item-text">
+          <h5>微信</h5>
+          <p>Njguotong</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 南京国通制冷技术有限公司.</p>
-		<p>电话：025-83611815</p>
-		<p>微信：Njguotong</p>
-		<p>地址：江苏省南京市鼓楼区中山北路188号长发</p>
-    </footer>
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 南京国通制冷技术有限公司 · 版权所有</p>
+  <p style="letter-spacing:.08em">NANJING GUOTONG REFRIGERATION TECHNOLOGY CO., LTD.</p>
+</footer>
 
-    <script src="js/scripts.js"></script>
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        // stagger siblings
+        const siblings = [...e.target.parentElement.querySelectorAll('.reveal')];
+        const idx = siblings.indexOf(e.target);
+        e.target.style.transitionDelay = `${idx * 0.08}s`;
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => io.observe(r));
+</script>
+
 </body>
 </html>
