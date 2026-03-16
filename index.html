@@ -822,6 +822,9 @@
   document.getElementById('wechatModal').addEventListener('click', function(e) {
     if (e.target === this) closeWechatModal();
   });
+  document.querySelector('.modal-card').addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeWechatModal();
   });
